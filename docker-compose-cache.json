@@ -15,6 +15,9 @@
       ],
       "cache-to": [
         "type=local,src=/tmp/.buildx-cache"
+      ],
+      "output": [
+        "type=local"
       ]
     }
   }
