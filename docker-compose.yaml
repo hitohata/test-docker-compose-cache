@@ -1,7 +1,7 @@
 services:
   cache-build:
     build:
-      dockerfile: Dockerfile
+      dockerfile: dockerfile/Dockerfile
     volumes:
       - .:/app
     command: ["sh", "-c", "cargo run"]
