@@ -33,7 +33,7 @@ jobs:
       - name: Save cache
         uses: actions/cache/save@v4
         with:
-          path: /tmp/.buildx-cache-new
+          path: /out/.buildx-cache
           key: ${{ runner.os }}-buildx
 
   actions-timeline:
