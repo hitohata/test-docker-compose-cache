@@ -11,10 +11,10 @@
       "context": ".",
       "dockerfile": "dockerfile/Dockerfile",
       "cache-from": [
-        "type=local,dist=/tmp/.buildx-cache"
+        "type=local,src=/tmp/.buildx-cache"
       ],
       "cache-to": [
-        "type=local,src=/tmp/.buildx-cache"
+        "type=local,dist=/tmp/.buildx-cache"
       ],
       "output": [
         "type=local"
