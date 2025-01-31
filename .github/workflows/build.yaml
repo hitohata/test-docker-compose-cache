@@ -35,3 +35,9 @@ jobs:
         with:
           path: /tmp/.buildx-cache-new
           key: ${{ runner.os }}-buildx
+
+  actions-timeline:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Kesin11/actions-timeline@v2
