@@ -27,7 +27,7 @@ jobs:
         run: |
           docker buildx build \
             --cache-to type=local,dest=/tmp/.buildx-cache-new \
-            --cache-from type=local,src=/tmp/.buildx-cache .\
+            --cache-from type=local,src=/tmp/.buildx-cache . 
 
       - name: Move new cache
         run: |
