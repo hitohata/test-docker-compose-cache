@@ -1,0 +1,7 @@
+services:
+  cache-build:
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: ["sh", "-c", "cargo run"]
