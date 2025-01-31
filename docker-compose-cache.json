@@ -17,7 +17,7 @@
         "type=local,dest=/tmp/.buildx-cache-new"
       ],
       "output": [
-        "type=docker"
+        "type=local"
       ]
     }
   }
