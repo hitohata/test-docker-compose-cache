@@ -1,0 +1,21 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "cache-build"
+      ]
+    }
+  },
+  "target": {
+    "cache-build": {
+      "context": ".",
+      "dockerfile": "dockerfile/Dockerfile",
+      "cache-from": [
+        "type=local,src=/tmp/.buildx-cache"
+      ],
+      "cache-to": [
+        "type=local,src=/tmp/.buildx-cache"
+      ]
+    }
+  }
+}
