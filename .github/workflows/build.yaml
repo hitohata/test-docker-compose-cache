@@ -3,11 +3,12 @@ name: Build
 on:
   push:
 
+permissions:
+  contents: write
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v4
