@@ -25,7 +25,7 @@ jobs:
 
       - name: Build and cache Docker image
         run: |
-          docker buildx build . \
+          docker buildx build --push -t tmp/tmp \
             --cache-to type=local,dest=/tmp/.buildx-cache-new \
             --cache-from type=local, src=/tmp/.buildx-cache \
 
