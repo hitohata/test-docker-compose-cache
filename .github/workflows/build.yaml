@@ -29,3 +29,8 @@ jobs:
       - name: Build
         run: docker buildx bake --file docker-compose.yaml --file docker-compose-cache.json
 
+      - name: Save cache
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/new/.buildx-cache-new
+          key: ${{ runner.os }}-buildx
