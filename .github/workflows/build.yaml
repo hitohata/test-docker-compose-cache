@@ -23,4 +23,4 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build
-        run: docker buildx bake --file docker-compose.yaml --file docker-compose-cache.yaml
+        run: docker buildx bake --file docker-compose.yaml --file docker-compose-cache.json
