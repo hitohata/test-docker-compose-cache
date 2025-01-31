@@ -10,6 +10,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: add permission
+        run: echo "BUILDX_BAKE_ENTITLEMENTS_FS=0" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v4
 
