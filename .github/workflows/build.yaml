@@ -12,13 +12,14 @@ jobs:
     steps:
       - name: add permission
         run: echo "BUILDX_BAKE_ENTITLEMENTS_FS=0" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Cache Docker layers
         uses: actions/cache@v4
         with:
-          path: /tmp/cached/.buildx-cache
+          path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx
           restore-keys: |
             ${{ runner.os }}-buildx
@@ -32,5 +33,5 @@ jobs:
       - name: Save cache
         uses: actions/cache/save@v4
         with:
-          path: /tmp/new/.buildx-cache
+          path: /tmp/.buildx-cache-new
           key: ${{ runner.os }}-buildx
