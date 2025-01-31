@@ -25,10 +25,9 @@ jobs:
 
       - name: Build and cache Docker image
         run: |
-          docker build --tag ghcr.io/my-org/my-repo/api:latest . \
+          docker build . \
             --cache-from=type=local,src=/tmp/.buildx-cache \
-            --cache-to=type=local,dest=/tmp/.buildx-cache-new \
-            -f dockerfile .
+            --cache-to=type=local,dest=/tmp/.buildx-cache-new
 
       - name: Move new cache
         run: |
