@@ -24,9 +24,9 @@ jobs:
 
       - name: Build and cache Docker image
         run: |
-          docker buildx build \
+          docker buildx build -f docker-compose.yaml \
             --cache-to type=local,dest=/tmp/.buildx-cache-new \
-            --cache-from type=local,src=/tmp/.buildx-cache . 
+            --cache-from type=local,src=/tmp/.buildx-cache  
 
       - name: Save cache
         uses: actions/cache/save@v4
