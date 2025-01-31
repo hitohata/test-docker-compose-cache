@@ -5,3 +5,8 @@ services:
     volumes:
       - .:/app
     command: ["sh", "-c", "cargo run"]
+
+  cache-dynamo:
+    image: amazon/dynamodb-local
+    ports:
+      - "8000:8000"
