@@ -18,7 +18,7 @@ jobs:
       - name: Cache Docker layers
         uses: actions/cache@v4
         with:
-          path: /tmp/.buildx-cache
+          path: /tmp/cached/.buildx-cache
           key: ${{ runner.os }}-buildx
           restore-keys: |
             ${{ runner.os }}-buildx
@@ -28,3 +28,4 @@ jobs:
 
       - name: Build
         run: docker buildx bake --file docker-compose.yaml --file docker-compose-cache.json
+
