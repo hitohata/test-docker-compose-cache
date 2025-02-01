@@ -11,13 +11,13 @@
       "context": ".",
       "dockerfile": "dockerfile/Dockerfile",
       "cache-from": [
-        "type=local,src=/tmp/cache/.buildx-cache"
+        "type=local,src=/tmp/.buildx-cache"
       ],
       "cache-to": [
-        "type=local,dest=/tmp/out/.buildx-cache"
+        "type=local,dest=/tmp/.buildx-cache-new"
       ],
       "output": [
-        "type=local,dest=/tmp/out/.buildx-cache"
+        "type=local,dest=/tmp/.buildx-cache-new"
       ]
     }
   }
