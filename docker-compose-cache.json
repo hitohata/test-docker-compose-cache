@@ -11,13 +11,13 @@
       "context": ".",
       "dockerfile": "dockerfile/Dockerfile",
       "cache-from": [
-        "type=local,src=./tmp/.buildx-cache"
+        "type=registry,ref=ghcr.io/hitohata/test-docker-compose-cache:cache"
       ],
       "cache-to": [
-        "type=local,dest=./tmp/.buildx-cache-new"
+        "type=registry,ref=ghcr.io/hitohata/test-docker-compose-cache:cache"
       ],
       "output": [
-        "type=local,dest=./tmp/.buildx-cache-new"
+        "type=docker"
       ]
     }
   }
