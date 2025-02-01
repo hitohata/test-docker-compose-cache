@@ -27,8 +27,16 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build
-        run: docker buildx bake --file docker-compose.yaml --file docker-compose-cache.json
+      - name: build
+        uses: docker/build-push-action@v5
+        with:
+          file: ./docker-compose-cache.json
+          push: false
+          load: true
+          tags: user/app:latest
+
+#      - name: Build
+#        run: docker buildx bake --file docker-compose.yaml --file docker-compose-cache.json
 
 #      - name: Save cache
 #        uses: actions/cache/save@v4
