@@ -16,14 +16,6 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
-#
-#      - name: Cache Docker layers
-#        uses: actions/cache@v4
-#        with:
-#          path: /tmp/.buildx-cache
-#          key: ${{ runner.os }}-buildx
-#          restore-keys: |
-#            ${{ runner.os }}-buildx
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -34,15 +26,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build
-        run: docker buildx bake --file docker-compose.yaml --file docker-compose-cache.json
-
-#      - name: Save cache
-#        uses: actions/cache/save@v4
-#        with:
-#          path: /tmp/out/.buildx-cache
-#          key: ${{ runner.os }}-buildx
+#
+#      - name: Build
+#        run: docker buildx bake --file docker-compose.yaml --file docker-compose-cache.json
 
       - name: run command
         run: docker compose up --exit-code-from cache-build
