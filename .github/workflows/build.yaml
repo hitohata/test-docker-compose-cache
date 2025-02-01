@@ -37,7 +37,7 @@ jobs:
           key: ${{ runner.os }}-buildx
 
       - name: run command
-        run: docker compose up
+        run: docker compose up --exit-code-from cache-build
 
   actions-timeline:
     needs: [test]
