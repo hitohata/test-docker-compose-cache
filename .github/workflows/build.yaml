@@ -36,6 +36,9 @@ jobs:
           path: /tmp/out/.buildx-cache
           key: ${{ runner.os }}-buildx
 
+      - name: run command
+        run: docker compose up
+
   actions-timeline:
     needs: [test]
     runs-on: ubuntu-latest
